@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Snap Images</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 399px)" href="css/mobile.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 400px) and (max-width: 719px)" href="css/small.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 720px) and (max-width: 1219px)" href="css/medium.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 1220px)" href="css/large.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <img class="header__logo" src="imgs/camera.svg" alt="logo">
+            <div class="search-box">
+                <input type="search" results="5" name="search" id="search" class="search" placeholder="Search..." autofocus>
+                <input type="submit" value="Go" name="go" id="go" class="go">
+            </div>
+            <a id="menu" class="header__menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+    <section class="content">
+        <section class="imgs-box">
+            <div class="img-box"><img src="http://i.imgur.com/bwy74ok.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/bAZWoqx.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/LkmcILl.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/aboaFoB.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/PgmEBSB.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/q9zO6tw.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/r8p3Xgq.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/hODreXI.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/UORFJ3w.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/bwy74ok.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/bAZWoqx.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/LkmcILl.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/aboaFoB.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/PgmEBSB.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/q9zO6tw.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/r8p3Xgq.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/hODreXI.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/UORFJ3w.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/bwy74ok.jpg"></div>
+        </section>
+    </section>
+    <footer>
+        <ul>
+            <li>Joao Barreiros</li>
+            <li>Brand Name</li>
+            <li>2015</li>
+        </ul>
+    </footer>
+<script>
+
+    var hamburger = document.querySelector('.hamburger');
+    hamburger.addEventListener('click', function(e) {
+
+        e.stopPropagation();
+    });
+
+</script>
+</body>
+</html>

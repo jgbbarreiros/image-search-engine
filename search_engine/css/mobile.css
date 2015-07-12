@@ -1,0 +1,11 @@
+.header__logo {
+    display: none;
+}
+
+.search-box {
+    width: calc(100% - 32px - 5em);
+}
+
+.search {
+    width: calc(100% - 1em - 48px);
+}
