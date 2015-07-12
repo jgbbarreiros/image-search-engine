@@ -1,0 +1,32 @@
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    color: #424242;
+}
+
+canvas {
+    visibility: hidden;
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 90%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.inner p {
+    font-family: Consolas, serif;
+}

@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Google Images</title>
-    <meta name="description" content="PCM Picture Search">
+    <meta charset="UTF-8">
+    <meta name="description" content="search engine - database">
     <meta name="keywords" content="HTML5, CSS, JavaScript">
     <meta name="author" content="Joao Barreiros">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/my_style.css">
-    <script src="js/predominant_color.js"></script>
-    <script src="js/xml_local_storage.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Database</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <script src="js/load.js"></script>
+    <script src="js/data_xml.js"></script>
+    <script src="js/image_processing_color.js"></script>
+    <script src="js/image_processing_moments.js"></script>
+    <script src="js/local_storage_xml.js"></script>
 </head>
 <body>
+    <div class="outer">
+        <div class="middle">
+            <div class="inner">
+                <h1 id="consoleLogHeader"></h1>
+                <p id="consoleLog"></p>
+            </div>
+        </div>
+    </div>
     <canvas id="canvas" width="1000" height="600"></canvas>
-    <script src="js/init.js"></script>
+
 </body>
 </html>

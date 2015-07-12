@@ -1,29 +1,7 @@
-var red    = new Color(204,   0,   0,    "red");
-var orange = new Color(251, 148,  11, "orange");
-var yellow = new Color(255, 255,   0, "yellow");
-var green  = new Color(  0, 204,   0,  "green");
-var teal   = new Color(  3, 192, 198,   "teal");
-var blue   = new Color(  0,   0, 255,   "blue");
-var purple = new Color(118,  44, 167, "purple");
-var pink   = new Color(255, 152, 191,   "pink");
-var white  = new Color(255, 255, 255,  "white");
-var gray   = new Color(153, 153, 153,   "gray");
-var black  = new Color(  0,   0,   0,  "black");
-var brown  = new Color(136,  84,  24,  "brown");
-var colors = [red, orange, yellow, green, teal, blue, purple, pink, white, gray, black, brown];
-
-function Color(r, g, b, name) {
-    this.r = Math.floor(r);
-    this.g = Math.floor(g);
-    this.b = Math.floor(b);
-    this.name = name;
-    this.color = ["rgb(",this.r,",",this.g,",",this.b,")"].join("");
-}
-
-function ImageProcessingColor(canvas, colors) {
+function ImageProcessingColor(canvas) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.colors = colors;
+    this.colors = COLORS;
 
     this.colorHist = function(img){
         var hist = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
