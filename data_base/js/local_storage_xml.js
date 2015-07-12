@@ -44,7 +44,35 @@ function LocalStorageXML() {
     };
 
     var saveMoments = function(imgs) {
-
+        for (var i = 0; i < imgs.length; i++) {
+            var xmlRowString = '<image class="Manhattan">';
+            var manhattan = imgs[i].manhattan;
+            manhattan.sort(
+                function (a, b) {
+                    var keyA = a.diff;
+                    var keyB = b.diff;
+                    if (keyA < keyB) return -1;
+                    if (keyA > keyB) return 1;
+                    return 0;
+                }
+            );
+            for (var j = 0; j < manhattan.length; j++) {
+                xmlRowString += '<path>' + manhattan[j].path + '</path>';
+            }
+            xmlRowString += '</image>';
+            if (typeof(localStorage) == 'undefined')
+                alert('Your browser does not support HTML5 localStorage. Try upgrading.');
+            else {
+                try {
+                    localStorage.setItem(imgs[i].path, xmlRowString);
+                }
+                catch (e) {
+                    alert("save failed!");
+                    if (e == QUOTA_EXCEEDED_ERR)
+                        alert('Quota exceeded!');
+                }
+            }
+        }
     };
 
     this.readImagesXML = function() {
@@ -64,5 +92,7 @@ function LocalStorageXML() {
                 }
             }
         }
+
+
     };
 }

@@ -60,7 +60,15 @@ processMoments = function(imgs) {
     for (var i = 0; i < imgs.length; i++) {
         consoleLog.innerHTML = "process moments " + (i+1) + " of " + imgs.length;
         imgs[i].moments = ipm.colorMoments(imgs[i].img);
-        imgs[i].manhattan = ipm.Manhattan_distance;
+    }
+
+    for (var i = 0; i < imgs.length; i++) {
+        imgs[i].manhattan = [];
+        for (var j = 0; j < imgs.length; j++) {
+            if (i != j) {
+                imgs[i].manhattan.push({diff: ipm.Manhattan_distance(imgs[i].moments, imgs[j].moments), path: imgs[j].path});
+            }
+        }
     }
 };
 

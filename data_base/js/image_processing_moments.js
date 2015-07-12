@@ -1,55 +1,7 @@
-function main() {
-	var canvas = document.querySelector("canvas");
-
-	var Img_Pro = new ImageProcessingMoments(canvas);
-	var img1 = new Image();
-	var img2 = new Image();
-
-	img1.src = "images/0003.jpg";
-	img2.src = "images/0008.jpg";
-
-	var numImages = 2;
-	var numLoaded = 0;
-
-	function imageLoaded() {
-		numLoaded++;
-		if (numLoaded === numImages) {
-			Img_Pro.init(img1);
-			Img_Pro.compare(img2);
-		}
-	}
-
-	img1.onload = function () {
-		imageLoaded();
-	};
-
-	img2.onload = function () {
-		imageLoaded();
-	};
-}
-
-
 function ImageProcessingMoments(canvas) {
 	this.canvas = canvas;
 	this.ctx = this.canvas.getContext("2d");
-	this.img = [];
-	this.c_moments = [];
 
-	this.init = function (img1) {
-		this.img = img1;
-		this.ctx.drawImage(img1, 0, 0);
-		this.c_moments = this.colorMoments(this.img);
-	};
-
-	this.compare = function (img2) {
-		this.ctx.drawImage(img2, 0, 0);
-		var Descritor = this.colorMoments(img2);
-
-		this.ctx.drawImage(this.img, 300, 0);
-		var diff = this.Manhattan_distance(this.c_moments, Descritor);
-		this.ctx.fillStyle = "rgb(255,0,0)";
-		this.ctx.fillText("Diff =  " + diff, 200, 200);
-	};
 
 	this.colorMoments = function (img) {
 		var vector_descriptor = Array.apply(null, new Array(54)).map(Number.prototype.valueOf,0);
@@ -77,7 +29,7 @@ function ImageProcessingMoments(canvas) {
 					var r = block.data[i];
 					var g = block.data[i+1];
 					var b = block.data[i+2];
-					var c = this.rgbToHsv(r,g,b);
+					var c = rgbToHsv(r,g,b);
 					hsv_arr.push(c);
 					mh += c[0];
 					ms += c[1];
@@ -117,8 +69,7 @@ function ImageProcessingMoments(canvas) {
 
 	};
 
-
-	this.rgbToHsv = function (r, g, b) {
+	var rgbToHsv = function (r, g, b) {
 		r = r / 255;
 		g = g / 255;
 		b = b / 255;
