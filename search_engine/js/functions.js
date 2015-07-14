@@ -1,3 +1,6 @@
-/**
- * Created by Joao on 7/4/2015.
- */
+function handleKeyPress(e){
+    if(e.keyCode === 13){
+        alert(document.getElementById("search").value);
+    }
+    return false;
+}
