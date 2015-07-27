@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 400px) and (max-width: 719px)" href="css/small.css">
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 720px) and (max-width: 1219px)" href="css/medium.css">
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 1220px)" href="css/large.css">
+    <script src="js/search_engine.js"></script>
     <script src="js/functions.js"></script>
 </head>
 <body>
@@ -17,7 +18,7 @@
         <div class="header__inner">
             <img class="header__logo" src="imgs/camera.svg" alt="logo">
             <div class="search-box">
-                <input type="search" results="5" name="search" id="search" class="search" placeholder="Search..." onkeypress="handleKeyPress(event)" autofocus>
+                <input type="search" results="5" name="search" id="search" class="search" placeholder="Search..." onkeypress="enter(event)" autofocus>
                 <input type="submit" value="Go" name="go" id="go" class="go">
             </div>
             <a id="menu" class="header__menu">
@@ -28,7 +29,8 @@
         </div>
     </header>
     <section class="content">
-        <section class="imgs-box">
+        <h2 id="img-txt"></h2>
+        <section class="imgs-box" id="imgs-box">
             <div class="img-box"><img src="http://i.imgur.com/bwy74ok.jpg"></div>
             <div class="img-box"><img src="http://i.imgur.com/bAZWoqx.jpg"></div>
             <div class="img-box"><img src="http://i.imgur.com/LkmcILl.jpg"></div>
@@ -48,6 +50,7 @@
             <div class="img-box"><img src="http://i.imgur.com/hODreXI.jpg"></div>
             <div class="img-box"><img src="http://i.imgur.com/UORFJ3w.jpg"></div>
             <div class="img-box"><img src="http://i.imgur.com/bwy74ok.jpg"></div>
+            <div class="img-box"><img src="http://i.imgur.com/bAZWoqx.jpg"></div>
         </section>
     </section>
     <footer>

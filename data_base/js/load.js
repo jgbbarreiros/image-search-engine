@@ -14,7 +14,7 @@ var brown  = new Color(136,  84,  24,  "brown");
 var consoleLogHeader;
 var consoleLog;
 var canvas;
-var NUM_IMG_PER_CATEGORY = 2;
+var NUM_IMG_PER_CATEGORY = 20;
 var KEYWORDS = ["beach", "birthday", "face"];/*, "indoor", "manmade/artificial", "manmade/manmade",
                 "manmade/urban", "marriage", "nature", "no_people", "outdoor", "party", "people", "snow"];*/
 var COLORS = [red, orange, yellow, green, teal, blue, purple, pink, white, gray, black, brown];

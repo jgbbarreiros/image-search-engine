@@ -10,7 +10,13 @@ function LocalStorageXML() {
         for (var i = 0; i < KEYWORDS.length; i++) {
             var xmlRowString = '<' + KEYWORDS[i] + '>';
             var imgs_keyword = imgs.slice(i*NUM_IMG_PER_CATEGORY, i*NUM_IMG_PER_CATEGORY+NUM_IMG_PER_CATEGORY);
-
+            
+            xmlRowString += '<images class="unordered">';
+            for (var j = 0; j < imgs_keyword.length; j++) {
+                xmlRowString += '<path>' + imgs_keyword[j].path + '</path>';
+            }
+            xmlRowString += '</images>';
+            
             for (var j = 0; j < COLORS.length; j++) {
                 xmlRowString += '<images class="' + COLORS[j].name + '">';
                 imgs_keyword.sort(
@@ -23,7 +29,7 @@ function LocalStorageXML() {
                     }
                 );
                 for (var k = 0; k < imgs_keyword.length; k++) {
-                    xmlRowString += '<path>"' + imgs_keyword[k].path + '"</path>';
+                    xmlRowString += '<path>' + imgs_keyword[k].path + '</path>';
                 }
                 xmlRowString += '</images>';
             }
