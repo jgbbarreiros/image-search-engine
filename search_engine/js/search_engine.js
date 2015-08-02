@@ -37,8 +37,6 @@ function SearchEngine() {
     
     var isImage = function(word) {
         var parts = word.split(".");
-        if (parts[parts.length - 1] == "jpg")
-            return true;
-        return false;
+        return (parts[parts.length - 1] == "jpg");
     };
 }
