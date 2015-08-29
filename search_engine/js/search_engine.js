@@ -1,21 +1,21 @@
 function SearchEngine() {
     
-    var search_word;
-    var className;
+    this.search_word = undefined;
+    this.className = undefined;
     
     this.getResults = function() {
-        var localStorageRow = localStorage.getItem(search_word);
+        var localStorageRow = localStorage.getItem(this.search_word);
         if (localStorageRow === null)
             return null;
-        if (isImage(search_word))
-            className = "Manhattan";
+        if (isImage(this.search_word))
+            this.className = "Manhattan";
         var paths = [];
         var xml;
         if (window.DOMParser) {
             var parser = new DOMParser();
             xml = parser.parseFromString(localStorageRow, "text/xml");
         }
-        var imgs = xml.getElementsByClassName(className)[0].childNodes;
+        var imgs = xml.getElementsByClassName(this.className)[0].childNodes;
         for (var i = 0; i < imgs.length; i++) {
             var path = imgs[i].childNodes[0].nodeValue;
             paths.push(path);
@@ -24,15 +24,15 @@ function SearchEngine() {
     };
     
     this.setSearchWord = function(sw) {
-        search_word = sw;
+        this.search_word = sw;
     };
     
     this.setColor = function(c) {
-        className = c;
+        this.className = c;
     };
     
     this.resetColor = function() {
-        className = "unordered";
+        this.className = "unordered";
     };
     
     var isImage = function(word) {

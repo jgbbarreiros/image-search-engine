@@ -14,7 +14,7 @@ var brown  = new Color(136,  84,  24,  "brown");
 var consoleLogHeader;
 var consoleLog;
 var canvas;
-var NUM_IMG_PER_CATEGORY = 20;
+var NUM_IMG_PER_CATEGORY = 1;
 var KEYWORDS = ["beach", "birthday", "face"];/*, "indoor", "manmade/artificial", "manmade/manmade",
                 "manmade/urban", "marriage", "nature", "no_people", "outdoor", "party", "people", "snow"];*/
 var COLORS = [red, orange, yellow, green, teal, blue, purple, pink, white, gray, black, brown];
@@ -32,7 +32,7 @@ window.onload = function() {
     consoleLog = document.getElementById("consoleLog");
     consoleLogHeader.innerHTML = "Running...";
     canvas = document.querySelector("canvas");
-    var data_xml = new DataXML("xml/database.xml");
+    var data_xml = new DataXML("/xml/database.xml");
     setTimeout(function() {
         data_xml.readImages(NUM_IMG_PER_CATEGORY); // images per category
     }, 0);
@@ -41,7 +41,6 @@ window.onload = function() {
 processImages = function(imgs) {
     processColor(imgs);
     processMoments(imgs);
-    console.log(imgs);
     saveImages(imgs);
     consoleLogHeader.innerHTML = "Done!";
 

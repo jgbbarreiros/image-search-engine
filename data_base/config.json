@@ -1,0 +1,16 @@
+{
+	"host": "127.0.0.1",
+	"port": 8080,
+	"exts": {
+		".html" : "text/html",
+		".xml"  : "text/xml",
+		".js"   : "application/javascript",
+		".css"  : "text/css",
+		".txt"  : "text/plain",
+		".jpg"  : "image/jpeg",
+		".gif"  : "image/gif",
+		".png"  : "image/png",
+		".svg"  : "image/svg+xml",
+		".ico"  : "image/x-icon"
+	}
+}

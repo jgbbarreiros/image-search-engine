@@ -18,10 +18,9 @@ this.loadXML = function () {
     return xmlhttp.responseXML;
 };
 */
-
+var search_engine = new SearchEngine();
 function enter(e) {
     if(e.keyCode === 13) {
-        var search_engine = new SearchEngine();
         var search = document.getElementById("search");
         search_engine.setSearchWord(search.value);
         search_engine.resetColor();
@@ -35,10 +34,22 @@ function enter(e) {
         document.getElementById("imgs-box").style.display = "inline-block";
         var imgs = document.getElementById("imgs-box").getElementsByTagName("img");
         for (var i = 0; i < paths.length; i++) {
-            imgs[i].src = "../data_base/" + paths[i];
+            imgs[i].src = paths[i];
         }
     }
     return false;
+}
+
+function select_color(title) {
+    search_engine.setColor(title);
+    var paths = search_engine.getResults();
+    if (paths === null)
+        return;
+    var imgs = document.getElementById("imgs-box").getElementsByTagName("img");
+    for (var i = 0; i < paths.length; i++) {
+        imgs[i].src = paths[i];
+    }
+
 }
         /*var search = document.getElementById("search");
       	var word = search.value;
