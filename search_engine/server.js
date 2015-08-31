@@ -47,7 +47,8 @@ var server = http.createServer(function (req, res) {
             body += data;
         });
         req.on('end', function () {
-            console.log('Message: "' + body + '"');
+            // console.log('Message: "' + body + '"');
+            console.log('Message saved to: ' + req.url)
             fs.writeFileSync(req.url.replace('\/', ''), body);
             res.end();
         });

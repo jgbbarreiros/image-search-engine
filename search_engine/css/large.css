@@ -39,3 +39,7 @@
 .img-box:nth-of-type(4n) {
     margin-right: 0;
 }
+
+#img-txt {
+    margin-left: 0;
+}

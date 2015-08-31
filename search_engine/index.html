@@ -18,22 +18,22 @@
         <div class="header__inner">
             <img class="header__logo" src="imgs/camera.svg" alt="logo">
             <div class="search-box">
-                <input type="search" results="5" name="search" id="search" class="search" placeholder="Search..." onkeypress="enter(event)" autofocus>
+                <input type="search" results="5" name="search" id="search" class="search" placeholder="Search..." onkeypress="enter(event)" ondrop="drop(event)" autofocus>
                 <input type="submit" value="Go" name="go" id="go" class="go">
             </div>
             <div class="header__colors">
-                <div onclick="select_color(this.title)" title="red" class="color-btn" style="background: #c00;"></div>
-                <div onclick="select_color(this.title)" title="orange" class="color-btn" style="background: #fb940b;"></div>
-                <div onclick="select_color(this.title)" title="yellow" class="color-btn" style="background: #ff0;"></div>
-                <div onclick="select_color(this.title)" title="green" class="color-btn" style="background: #0c0;"></div>
-                <div onclick="select_color(this.title)" title="teal" class="color-btn" style="background: #03c0c6;"></div>
-                <div onclick="select_color(this.title)" title="blue" class="color-btn" style="background: #00f;"></div>
-                <div onclick="select_color(this.title)" title="purple" class="color-btn" style="background: #762ca7;"></div>
-                <div onclick="select_color(this.title)" title="pink" class="color-btn" style="background: #ff98bf;"></div>
-                <div onclick="select_color(this.title)" title="white" class="color-btn" style="background: #fff;"></div>
-                <div onclick="select_color(this.title)" title="gray" class="color-btn" style="background: #999;"></div>
-                <div onclick="select_color(this.title)" title="black" class="color-btn" style="background: #000;"></div>
-                <div onclick="select_color(this.title)" title="brown" class="color-btn" style="background: #885418;"></div>
+                <div onclick="select_color(this)" title="red" class="color-btn" style="background: #c00;"></div>
+                <div onclick="select_color(this)" title="orange" class="color-btn" style="background: #fb940b;"></div>
+                <div onclick="select_color(this)" title="yellow" class="color-btn" style="background: #ff0;"></div>
+                <div onclick="select_color(this)" title="green" class="color-btn" style="background: #0c0;"></div>
+                <div onclick="select_color(this)" title="teal" class="color-btn" style="background: #03c0c6;"></div>
+                <div onclick="select_color(this)" title="blue" class="color-btn" style="background: #00f;"></div>
+                <div onclick="select_color(this)" title="purple" class="color-btn" style="background: #762ca7;"></div>
+                <div onclick="select_color(this)" title="pink" class="color-btn" style="background: #ff98bf;"></div>
+                <div onclick="select_color(this)" title="white" class="color-btn" style="background: #fff;"></div>
+                <div onclick="select_color(this)" title="gray" class="color-btn" style="background: #999;"></div>
+                <div onclick="select_color(this)" title="black" class="color-btn" style="background: #000;"></div>
+                <div onclick="select_color(this)" title="brown" class="color-btn" style="background: #885418;"></div>
             </div>
             <a id="menu" class="header__menu">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -46,24 +46,24 @@
         <section>
             <h3>Current Search:</h3>
             <p id="nav-search-value">Beach</p>
-            <img class="nav-image" src="http://i.imgur.com/bwy74ok.jpg">
+            <img id="nav-search-img" class="nav-image" src="http://i.imgur.com/bwy74ok.jpg">
         </section>
         <hr/>
         <section>
             <h3>Colors:</h3>
             <div class="nav__colors">
-                <div onclick="select_color(this.title)" title="red" class="color-btn" style="background: #c00;"></div>
-                <div onclick="select_color(this.title)" title="orange" class="color-btn" style="background: #fb940b;"></div>
-                <div onclick="select_color(this.title)" title="yellow" class="color-btn" style="background: #ff0;"></div>
-                <div onclick="select_color(this.title)" title="green" class="color-btn" style="background: #0c0;"></div>
-                <div onclick="select_color(this.title)" title="teal" class="color-btn" style="background: #03c0c6;"></div>
-                <div onclick="select_color(this.title)" title="blue" class="color-btn" style="background: #00f;"></div>
-                <div onclick="select_color(this.title)" title="purple" class="color-btn" style="background: #762ca7;"></div>
-                <div onclick="select_color(this.title)" title="pink" class="color-btn" style="background: #ff98bf;"></div>
-                <div onclick="select_color(this.title)" title="white" class="color-btn" style="background: #fff;"></div>
-                <div onclick="select_color(this.title)" title="gray" class="color-btn" style="background: #999;"></div>
-                <div onclick="select_color(this.title)" title="black" class="color-btn" style="background: #000;"></div>
-                <div onclick="select_color(this.title)" title="brown" class="color-btn" style="background: #885418;"></div>
+                <div onclick="select_color(this)" title="red" class="color-btn" style="background: #c00;"></div>
+                <div onclick="select_color(this)" title="orange" class="color-btn" style="background: #fb940b;"></div>
+                <div onclick="select_color(this)" title="yellow" class="color-btn" style="background: #ff0;"></div>
+                <div onclick="select_color(this)" title="green" class="color-btn" style="background: #0c0;"></div>
+                <div onclick="select_color(this)" title="teal" class="color-btn" style="background: #03c0c6;"></div>
+                <div onclick="select_color(this)" title="blue" class="color-btn" style="background: #00f;"></div>
+                <div onclick="select_color(this)" title="purple" class="color-btn" style="background: #762ca7;"></div>
+                <div onclick="select_color(this)" title="pink" class="color-btn" style="background: #ff98bf;"></div>
+                <div onclick="select_color(this)" title="white" class="color-btn" style="background: #fff;"></div>
+                <div onclick="select_color(this)" title="gray" class="color-btn" style="background: #999;"></div>
+                <div onclick="select_color(this)" title="black" class="color-btn" style="background: #000;"></div>
+                <div onclick="select_color(this)" title="brown" class="color-btn" style="background: #885418;"></div>
             </div>
         </section>
         <hr/>
