@@ -53,6 +53,25 @@ var server = http.createServer(function (req, res) {
             res.end();
         });
 	}
+
+	// POST request
+	else if (req.method === "POST") {
+
+        var body = '';
+        req.setEncoding('utf8');
+        req.on('data', function (data) {
+            body += data;
+        });
+        req.on('end', function () {
+            console.log('Message: "' + body + '"');
+            res.end();
+        });
+    }
+
+    else {
+        res.writeHead(405, 'Method Not Supported', {'content-type': 'text/html'});
+        return res.end('<!doctype html><html><head><title>405</title></head><body>405: Method Not Supported</body></html>');
+    }
 });
 
 server.listen(port, host, function() {
