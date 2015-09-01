@@ -37,25 +37,26 @@ function search(data) {
     var imgs = document.getElementById("imgs-box").getElementsByTagName("img");
     $('#imgs-box').empty();
     for (var i = 0; i < 20; i++) {
-        $('#imgs-box').append('<div class="img-box"><img src="' + paths[i] + '"></div>');
+        $('#imgs-box').append('<div class="img-box"><img style="cursor: pointer;" src="' + paths[i] + '"></div>');
     }
 }
 
 function select_color(elem) {
-    if (search_engine.searchClass === 'Manhattan')
+    if (search_engine.searchClass === 'Manhattan' || !search_engine.searchWord)
         return;
     if (search_engine.searchClass === elem.title) {
         search_engine.resetColor();
     } else {
         search_engine.setColor(elem.title);
     }
+    
     var paths = search_engine.getResults();
     if (paths === null)
         return;
     var imgs = document.getElementById("imgs-box").getElementsByTagName("img");
     $('#imgs-box').empty();
     for (var i = 0; i < 20; i++) {
-        $('#imgs-box').append('<div class="img-box"><img src="' + paths[i] + '"></div>');
+        $('#imgs-box').append('<div class="img-box"><img style="cursor: pointer;" src="' + paths[i] + '"></div>');
     }
 }
 
@@ -68,6 +69,6 @@ function drop(ev) {
 
 window.onload = function() {
     for (var i = 0; i < KEYWORDS.length; i++) {
-        $('#imgs-box').append('<div onclick="search(\'' + KEYWORDS[i] + '\')" style="background: url(imgs/Images/' + KEYWORDS[i].replace('-','\/') + '/img_1.jpg); background-size: cover;" class="catg-box"><h3>' + KEYWORDS[i] + '</h3></div>');
+        $('#imgs-box').append('<div onclick="search(\'' + KEYWORDS[i] + '\')" style="cursor: pointer; background: url(imgs/Images/' + KEYWORDS[i].replace('-','\/') + '/img_1.jpg); background-size: cover;" class="catg-box"><h3>' + KEYWORDS[i] + '</h3></div>');
     }
 }

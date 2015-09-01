@@ -150,6 +150,7 @@ input[type="submit"]:active {
     height: 25px;
     display: inline-block;
     box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.26);
+    cursor: pointer;
 }
 
 .go {
@@ -158,6 +159,7 @@ input[type="submit"]:active {
     vertical-align: bottom;
     width: 48px;
     margin-left: 1em;
+    cursor: pointer;
 }
 
 .go:hover, .go:focus {
