@@ -40,7 +40,7 @@ window.onload = function() {
 
 processImages = function(imgs) {
     processColor(imgs);
-    // processMoments(imgs);
+    processMoments(imgs);
     saveImages(imgs);
     consoleLogHeader.innerHTML = "Done!";
 };

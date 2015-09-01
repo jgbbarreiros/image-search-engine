@@ -3,7 +3,7 @@ function LocalStorageXML() {
     this.saveImagesXML = function(imgs) {
         localStorage.clear();
         saveColor(imgs);
-        // saveMoments(imgs);
+        saveMoments(imgs);
     };
 
     var saveColor = function(imgs) {
@@ -66,18 +66,6 @@ function LocalStorageXML() {
             xmlhttp.open("PUT", '/xml/moment/' + imgs[i].path.replace(/\//g, '-') + '.xml', false);
             xmlhttp.setRequestHeader("content-type", "text/xml");
             xmlhttp.send(xmlRowString);
-            // if (typeof(localStorage) == 'undefined')
-            //     alert('Your browser does not support HTML5 localStorage. Try upgrading.');
-            // else {
-            //     try {
-            //         localStorage.setItem(imgs[i].path, xmlRowString);
-            //     }
-            //     catch (e) {
-            //         alert("save failed!");
-            //         if (e == QUOTA_EXCEEDED_ERR)
-            //             alert('Quota exceeded!');
-            //     }
-            // }
         }
     };
 
