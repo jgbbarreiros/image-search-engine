@@ -48,6 +48,7 @@ function select_color(elem) {
         search_engine.resetColor();
     } else {
         search_engine.setColor(elem.title);
+        document.getElementById("audio").play();
     }
     
     var paths = search_engine.getResults();

@@ -14,7 +14,7 @@ var brown  = new Color(136,  84,  24,  "brown");
 var consoleLogHeader;
 var consoleLog;
 var canvas;
-var NUM_IMG_PER_CATEGORY = 50;
+var NUM_IMG_PER_CATEGORY = 20;
 var KEYWORDS = ["beach", "birthday", "face", "indoor", "manmade-artificial", "manmade-manmade",
                 "manmade-urban", "marriage", "nature", "no_people", "outdoor", "party", "people", "snow"];
 var COLORS = [red, orange, yellow, green, teal, blue, purple, pink, white, gray, black, brown];
@@ -28,14 +28,23 @@ function Color(r, g, b, name) {
 }
 
 window.onload = function() {
-    consoleLogHeader = document.getElementById("consoleLogHeader");
-    consoleLog = document.getElementById("consoleLog");
-    consoleLogHeader.innerHTML = "Running...";
-    canvas = document.querySelector("canvas");
-    var data_xml = new DataXML("/xml/database.xml");
-    setTimeout(function() {
-        data_xml.readImages(NUM_IMG_PER_CATEGORY); // images per category
-    }, 0);
+    if (confirm('Are you sure you want to process and save a new database?')) {
+        var img_per_cat = prompt('Choose number of images per category or hit cancel to choose default');
+        if (img_per_cat == null || img_per_cat < 1) {
+            img_per_cat = NUM_IMG_PER_CATEGORY;
+        }
+        consoleLogHeader = document.getElementById("consoleLogHeader");
+        consoleLog = document.getElementById("consoleLog");
+        consoleLogHeader.innerHTML = "Running...";
+        canvas = document.querySelector("canvas");
+        var data_xml = new DataXML("/xml/database.xml");
+        setTimeout(function() {
+            data_xml.readImages(img_per_cat); // images per category
+        }, 0);
+    } else {
+        window.location.replace("index.html");
+    }
+    
 };
 
 processImages = function(imgs) {

@@ -11,6 +11,7 @@
 		".gif"  : "image/gif",
 		".png"  : "image/png",
 		".svg"  : "image/svg+xml",
-		".ico"  : "image/x-icon"
+		".ico"  : "image/x-icon",
+		".wav"  : "audio/x-wav"
 	}
 }
